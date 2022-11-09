@@ -109,13 +109,13 @@ def adventure_home(request):
     else:
         # [코드 수정] Character 모델 중 id가 1인 캐릭터 객체를 가져옴
         # [코드 수정] None을 지우고 작성
-        character = None
+        character = Character.objects.get(id=1)
         context = {
             'character': character,
         }
         # [코드 수정] character의 weapon 필드에 아무것도 저장되어 있지 않은 경우
         # [코드 수정] None을 지우고 작성
-        if None:
+        if character.weapon == None:
             # [코드 수정] 'game/adventure_new.html'로 이동하도록 코드 작성
             # [코드 수정] None을 지우고 작성
             return render(request, None, context)
